@@ -5,16 +5,16 @@ const Home = () => {
     <main>
      
       <a href="#" style={{ cursor: "pointer" }}>
-        <img src="public/banner.avif" className="img" loading="lazy" />
+        <img src="/banner.avif" className="img" loading="lazy" />
       </a>
       <a href="#" style={{ cursor: "pointer" }}>
-        <img src="public/offer.jpg" className="img" loading="lazy" />
+        <img src="/offer.jpg" className="img" loading="lazy" />
       </a>
       <a href="#" style={{ cursor: "pointer" }}>
-        <img src="public/ban4.png" className="img" />
+        <img src="/ban4.png" className="img" />
       </a>
       <a href="#" style={{ cursor: "pointer" }}>
-        <img src="public/ban5.png" className="img" loading="lazy" />
+        <img src="/ban5.png" className="img" loading="lazy" />
       </a>
       <Products/>
 
