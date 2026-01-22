@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
       </footer>
       <img
-        src="public/footer2.png"
+        src="/footer2.png"
         className="img"
         alt="Footer banner"
         loading="lazy"
