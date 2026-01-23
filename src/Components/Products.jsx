@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Product.css";
-import {Atom} from "react-loading-indicators"
+import { Mosaic } from "react-loading-indicators";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -28,7 +28,9 @@ const Products = () => {
       console.error("Error fetching products:", err);
       setError(err.message || "Something went wrong");
     } finally {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 2500);
     }
   };
 
@@ -48,7 +50,7 @@ const Products = () => {
     <main>
       {loading && (
         <div className="loading">
-          <Atom color="#32cd32" size="medium" text="" textColor="" />
+          <Mosaic color="#d961ed" size="medium" text="" textColor="" />{" "}
         </div>
       )}
 
