@@ -1,12 +1,16 @@
-import Home from "./Components/Home";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
+// import Header from "./Components/navbar/Header";
+import { lazy, Suspense } from "react";
+const Header = lazy(() => import("./Components/navbar/Header.jsx"));
+const Footer = lazy(() => import("./Components/footer/Footer"));
+const Home = lazy(() => import("./Components/Home.jsx"));
 const App = () => {
   return (
     <div>
-      <Header />
-      <Home />
-      <Footer />
+      <Suspense>
+        <Header />
+        <Home />
+        <Footer />
+      </Suspense>
     </div>
   );
 };

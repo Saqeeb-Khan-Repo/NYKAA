@@ -50,7 +50,12 @@ const Products = () => {
     <main>
       {loading && (
         <div className="loading">
-          <Mosaic color="#d961ed" size="medium" text="" textColor="" />{" "}
+          <Mosaic
+            color="#d961ed"
+            size="medium"
+            text=""
+            textColor="Products Loading"
+          />{" "}
         </div>
       )}
 

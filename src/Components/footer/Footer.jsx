@@ -1,5 +1,5 @@
 import "./Footer.css";
-import { footer1, footer2, footer3 } from "./data.js";
+import { footer1, footer2, footer3 } from "../data";
 
 const Footer = () => {
   return (

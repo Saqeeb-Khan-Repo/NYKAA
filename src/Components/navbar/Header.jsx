@@ -2,7 +2,7 @@
 import { BsHandbag } from "react-icons/bs";
 import { IoIosSearch } from "react-icons/io";
 import "./Header.css";
-import { categories, sideLinks, navLinks } from "./data";
+import { categories, sideLinks, navLinks } from "../data";
 import { FaMobileScreenButton } from "react-icons/fa6";
 import { IoLocation } from "react-icons/io5";
 import { FaGift } from "react-icons/fa";
