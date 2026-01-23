@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { BsHandbag } from "react-icons/bs";
 import { IoIosSearch } from "react-icons/io";
 import "./Header.css";
@@ -7,15 +6,19 @@ import { FaMobileScreenButton } from "react-icons/fa6";
 import { IoLocation } from "react-icons/io5";
 import { FaGift } from "react-icons/fa";
 import { MdOutlineHelp } from "react-icons/md";
+import { useState } from "react";
+import ProductCart from "../Cart/ProductCart";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <header className="top-header">
         <h3 className="h">Beauty and Products At Discounts</h3>
         <nav className="toplinks">
           <span>
-            <FaMobileScreenButton />{" "}
+            <FaMobileScreenButton />
           </span>
           <a href="#">Get APP</a>
           <span>
@@ -23,53 +26,44 @@ const Header = () => {
           </span>
           <a href="#">Location</a>
           <span>
-            <FaGift />{" "}
+            <FaGift />
           </span>
           <a href="#">Store & Gifts</a>
           <span>
-            <MdOutlineHelp />{" "}
+            <MdOutlineHelp />
           </span>
           <a href="#">Help</a>
         </nav>
       </header>
+
       <header className="header">
         <div className="header-inner">
-          <img
-            src="/nykaa.jpg"
-            alt="Nykaa Logo"
-            className="logo"
-            loading="lazy"
-          />
+          <img src="/nykaa.jpg" alt="Nykaa Logo" className="logo" />
 
           <nav className="nav-links">
-            {navLinks.map((link) =>
-              link === 
-              navLinks[0] ||
-              navLinks[1] ||
-              navLinks[2] ||
-              navLinks[3] ? (
-                <div className="popup-container" key={link}>
-                  <a href="#" className="link">
-                    {link}
-                  </a>
-                  <div className="menu">
-                    {categories.map((item, i) => (
-                      <a href="#" key={i}>
-                        {item}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <a key={link} href="#" className="link">
+            {navLinks.slice(0, 4).map((link) => (
+              <div className="popup-container" key={link}>
+                <a href="#" className="link">
                   {link}
                 </a>
-              ),
-            )}
+                <div className="menu">
+                  {categories.map((item, i) => (
+                    <a href="#" key={i}>
+                      {item}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
+            {navLinks.slice(4).map((link) => (
+              <a key={link} href="#" className="link">
+                {link}
+              </a>
+            ))}
           </nav>
 
           <div className="search">
-            <IoIosSearch className="search-icon" aria-label="Search" />
+            <IoIosSearch className="search-icon" />
             <input
               type="search"
               placeholder="Search on Nykaa"
@@ -77,11 +71,16 @@ const Header = () => {
             />
           </div>
 
-          <button className="icon-button" aria-label="Cart">
-            <BsHandbag className="bag" />
-          </button>
-
-          <button className="btn">Sign In</button>
+          <div>
+            <button className="btn">Sign In</button>
+            <button
+              className={`icon-button ${isOpen ? "open" : ""}`}
+              aria-label="Toggle cart"
+              onClick={() => setIsOpen((prev) => !prev)}
+            >
+              <BsHandbag className="bag" />
+            </button>
+          </div>
         </div>
       </header>
 
@@ -94,6 +93,13 @@ const Header = () => {
           ))}
         </nav>
       </header>
+
+      {isOpen && (
+        <>
+          <div className="cart-overlay open" onClick={() => setIsOpen(false)} />
+          <ProductCart setIsOpen={setIsOpen} />
+        </>
+      )}
     </>
   );
 };
