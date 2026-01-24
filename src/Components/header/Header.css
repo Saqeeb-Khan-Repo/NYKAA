@@ -54,7 +54,9 @@
   gap: 16px;
 }
 .logo {
-  height: 40px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 .logo:active {
@@ -69,7 +71,7 @@
 .link {
   text-decoration: none;
   color: #000;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.5px;
 }
 .link:hover,
@@ -135,8 +137,7 @@
   color: #333;
 }
 .side-header {
-  background: #fff;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid #c8bfbf;
   position: relative;
   z-index: 9;
 }
@@ -146,12 +147,8 @@
   padding: 12px 20px;
   justify-content: center;
 }
-.sidelinks a {
-  transition: color 0.2s;
-}
-.sidelinks a:active {
-  transform: scale(0.95);
-}
+
+/* FIXED POPUP - Anchor to trigger, gap below, mobile-safe */
 .popup-container {
   position: relative;
   display: inline-block;
@@ -159,7 +156,7 @@
 .menu {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
   background: rgb(216, 60, 167);
@@ -187,6 +184,15 @@
 .menu a:active {
   color: #ffccff;
 }
+
+.sidelinks a {
+  transition: color 0.2s;
+  color: gray;
+}
+.sidelinks a:active {
+  transform: scale(0.95);
+}
+
 @media (max-width: 768px) {
   .header-inner {
     padding: 8px 16px;
@@ -209,5 +215,9 @@
     flex-wrap: wrap;
     gap: 12px;
     padding: 8px 16px;
+  }
+  /* Optional: Hide hover popup on mobile, use click instead */
+  .popup-container:hover .menu {
+    display: none;
   }
 }

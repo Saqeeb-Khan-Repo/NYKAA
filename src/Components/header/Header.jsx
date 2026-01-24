@@ -82,16 +82,23 @@ const Header = () => {
             </button>
           </div>
         </div>
-      </header>
-
-      <header className="side-header">
-        <nav className="sidelinks">
-          {sideLinks.map((link) => (
-            <a key={link} href="#" className="link">
-              {link}
-            </a>
-          ))}
-        </nav>
+        {/* Fixed: Moved inside .header */}
+        <div className="side-header">
+          <nav className="sidelinks">
+            {sideLinks.map((link) => (
+              <div className="popup-container" key={link}>
+                <a href="#" className="link">
+                  {link}
+                </a>
+                <div className="menu">
+                  {/* Add side menu items here */}
+                  <a href="#">Option 1</a>
+                  <a href="#">Option 2</a>
+                </div>
+              </div>
+            ))}
+          </nav>
+        </div>
       </header>
 
       {isOpen && (
