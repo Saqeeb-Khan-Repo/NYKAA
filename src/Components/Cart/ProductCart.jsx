@@ -14,6 +14,7 @@ const ProductCart = ({ setIsOpen }) => {
         </button>
         <span>Bag</span>
       </div>
+      
 
       <div className="cart-body">
         <h1>YOUR Shipping Bag Is Empty</h1>
