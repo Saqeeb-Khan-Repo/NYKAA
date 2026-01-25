@@ -1,8 +1,8 @@
 import { lazy, Suspense } from "react";
-
 const Header = lazy(() => import("./Components/header/Header.jsx"));
 const Footer = lazy(() => import("./Components/footer/Footer"));
 const Home = lazy(() => import("./Components/Home.jsx"));
+const Products = lazy(() => import("./Components/product/Products"));
 
 const App = () => {
   const handleBackToTop = () => {
@@ -18,6 +18,7 @@ const App = () => {
       <Suspense fallback={null}>
         <Header />
         <Home />
+        <Products />
         <Footer />
       </Suspense>
 

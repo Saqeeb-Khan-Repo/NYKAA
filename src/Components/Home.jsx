@@ -1,4 +1,3 @@
-import Products from "./product/Products";
 
 const Home = () => {
   return (
@@ -16,7 +15,7 @@ const Home = () => {
       <a href="#" style={{ cursor: "pointer" }}>
         <img src="/ban5.png" className="img" loading="lazy" />
       </a>
-      <Products/>
+      
 
      
     </main>

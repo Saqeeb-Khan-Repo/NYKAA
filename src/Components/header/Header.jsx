@@ -90,11 +90,6 @@ const Header = () => {
                 <a href="#" className="link">
                   {link}
                 </a>
-                <div className="menu">
-                  {/* Add side menu items here */}
-                  <a href="#">Option 1</a>
-                  <a href="#">Option 2</a>
-                </div>
               </div>
             ))}
           </nav>

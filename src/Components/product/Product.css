@@ -8,6 +8,7 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
+  overflow: hidden;
 }
 
 /* Each product card */
@@ -22,10 +23,6 @@ main {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  &:active {
-    transform: scale(0.9);
-    transition: 1s;
-  }
 }
 
 /* Product fields */
